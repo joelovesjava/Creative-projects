@@ -10,8 +10,9 @@ reggiomilano = ["Reggio Calabria Centrale", "Villa San Giovanni", "Paola", "Vibo
 milanoreggio = reggiomilano[::-1]
 
 # 2: Reggio Calabria <-> Torino Porta Nuova
-reggiotorino = ["Torino Porta Nuova" if "Milano" in i else i for i in reggiomilano]
-reggiotorino = reggiotorino[:-1]
+reggiotorino = reggiomilano.copy()
+reggiotorino[-2] = "Torino Porta Susa"
+reggiotorino[-1] = "Torino Porta Nuova"
 torinoreggio = reggiotorino[::-1]
 
 # 3: Milano Centrale <-> Lecce
@@ -55,7 +56,11 @@ def avplanner():
             stat_com.append(stat)
     partenz = input("Where are you departing from? ")
     arriv = input("Where are you travelling to? ")
-    elimstop = stat_com.index(partenz) + 1
+    
+    elimstop = 0
+    if partenz in stat_com:
+        elimstop = stat_com.index(partenz) + 1
+    
     possible_stops = ", ".join(stat_com[elimstop:])
     if (partenz in line_1) and (arriv in line_2):
         if len(stat_com) == 1:
