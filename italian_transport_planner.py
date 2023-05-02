@@ -2,7 +2,7 @@
 
 # A list of lines to chose from, and their opposites
 # 1: Reggio Calabria<->Milano Centrale
-reggiomilano = ["Reggio Calabria Centrale", "Villa San Giovanni", "Paola", "Vibo Valentia-Pizzo", "Maratea",
+reggiomilano = ["Reggio Calabria Centrale", "Villa San Giovanni", "Vibo Valentia-Pizzo", "Paola", "Maratea",
                 "Sapri", "Vallo della Lucania-Castelnuovo", "Agropoli-Castellabate", "Salerno",
                 "Napoli", "Napoli Afragola", "Roma Termini", "Roma Tiburtina",
                 "Firenze Santa Maria Novella", "Bologna Centrale", "Reggio Emilia Mediopadana",
