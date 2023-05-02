@@ -60,8 +60,8 @@ def avplanner():
     if arriv in stat_com:
         stat_com.remove(arriv)
     
-    index_partenz = stat_com.index(partenz) + 1
     if partenz in stat_com:
+        index_partenz = stat_com.index(partenz) + 1
         stat_com = stat_com[index_partenz:]
     
     changeover = ", ".join(stat_com)
