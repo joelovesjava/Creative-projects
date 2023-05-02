@@ -4,7 +4,7 @@
 # 1: Reggio Calabria<->Milano Centrale
 reggiomilano = ["Reggio Calabria Centrale", "Villa San Giovanni", "Vibo Valentia-Pizzo", "Paola", "Maratea",
                 "Sapri", "Vallo della Lucania-Castelnuovo", "Agropoli-Castellabate", "Salerno",
-                "Napoli", "Napoli Afragola", "Roma Termini", "Roma Tiburtina",
+                "Napoli Afragola", "Napoli", "Roma Termini", "Roma Tiburtina",
                 "Firenze Santa Maria Novella", "Bologna Centrale", "Reggio Emilia Mediopadana",
                 "Milano Garibaldi", "Milano Centrale"]
 milanoreggio = reggiomilano[::-1]
@@ -20,9 +20,18 @@ milanolecce = milanoreggio[:7]
 milanolecce.extend(["Caserta", "Benevento", "Foggia", "Barletta", "Bari Centrale", "Brindisi", "Lecce"])
 leccemilano = milanolecce[::-1]
 
+# 4: Napoli Centrale <-> Venezia Santa Lucia
+napolivenezia = ["Napoli Centrale", "Roma Termini", "Firenze Santa Maria Novella", "Bologna Centrale", "Ferrara", "Padova", "Venezia Mestre", "Venezia Santa Lucia"]
+venezianapoli = napolivenezia[::-1]
+
+# 5: Napoli Centrale <-> Pesaro
+napolipesaro = ["Napoli Centrale", "Roma Termini", "Roma Tiburtina", "Firenze Santa Maria Novella", "Forli", "Cesena", "Rimini", "Riccione", "Cattolica", "Pesaro"]
+pesaronapoli = napolipesaro[::-1]
+
 # Dictionary of the possible routes
 avroutes = {"milanoreggio":milanoreggio, "reggiomilano":reggiomilano, "milanolecce":milanolecce, "leccemilano":leccemilano,
-          "reggiotorino":reggiotorino, "torinoreggio":torinoreggio}
+          "reggiotorino":reggiotorino, "torinoreggio":torinoreggio, "napolivenezia":napolivenezia, "venezianapoli":venezianapoli,
+          "napolipesaro":napolipesaro, "pesaronapoli":pesaronapoli}
 # NOTE: lines "milanoreggio"/"reggiomilano" and "torinoreggio"/"reggiotorino" 
 
 
@@ -36,6 +45,10 @@ def avplanner():
           Reggio-Calabria-Torino (reggiotorino)
           Milano-Reggio Calabria (milanoreggio)
           Reggio Calabria-Milano (reggiomilano)
+          Venezia-Napoli (venezianapoli)
+          Napoli-Venezia (napolivenezia)
+          Napoli-Pesaro (napolipesaro)
+          Pesaro-Napoli (pesaronapoli)
           
           Please use full names, no abbreviations''')
    
