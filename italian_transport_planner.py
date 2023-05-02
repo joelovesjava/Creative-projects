@@ -57,16 +57,20 @@ def avplanner():
     partenz = input("Where are you departing from? ")
     arriv = input("Where are you travelling to? ")
     
-    elimstop = 0
-    if partenz in stat_com:
-        elimstop = stat_com.index(partenz) + 1
+    if arriv in stat_com:
+        stat_com.remove(arriv)
     
-    possible_stops = ", ".join(stat_com[elimstop:])
+    index_partenz = stat_com.index(partenz) + 1
+    if partenz in stat_com:
+        stat_com = stat_com[index_partenz:]
+    
+    changeover = ", ".join(stat_com)
+    
     if (partenz in line_1) and (arriv in line_2):
         if len(stat_com) == 1:
             return f"Board the train at {partenz}, bound for {line_1[-1]}. At {stat_com[0]}, board the train bound for {line_2[-1]}, and alight at {arriv}"
         elif len(stat_com) > 1:
-            return f"Board the train at {partenz}, bound for {line_1[-1]}. You can alight at any of the following stations: {possible_stops}; and board the train bound for {line_2[-1]}"
+            return f"Board the train at {partenz}, bound for {line_1[-1]}. You can alight at any of the following stations: {changeover}; and board the train bound for {line_2[-1]}, alighting at {arriv}"
         else:
             return "There are no connections on these routes"
     else:
